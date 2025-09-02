@@ -1,0 +1,1 @@
+sudo grep -v '^#' /etc/sudoers /etc/sudoers.d/* 2>/dev/null | grep -E '(ALL|sudo|wheel)'
