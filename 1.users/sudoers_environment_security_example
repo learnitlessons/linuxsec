@@ -1,0 +1,7 @@
+# Environment security demonstration
+Defaults:envuser env_reset
+Defaults:envuser secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Defaults:envuser env_keep="LANG LC_* TZ"
+Defaults:envuser env_delete="LD_PRELOAD LD_LIBRARY_PATH"
+
+envuser ALL=(root) NOPASSWD: /usr/bin/env, /bin/echo, /usr/bin/whoami
