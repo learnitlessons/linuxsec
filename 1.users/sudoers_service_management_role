@@ -1,0 +1,4 @@
+# Service management privileges for serviceadmin
+serviceadmin ALL=(root) NOPASSWD: /bin/systemctl start *, /bin/systemctl stop *, /bin/systemctl restart *, /bin/systemctl status *
+serviceadmin ALL=(root) NOPASSWD: /bin/journalctl
+serviceadmin ALL=(root) PASSWD: /usr/bin/apt update, /usr/bin/apt upgrade
