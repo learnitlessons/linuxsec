@@ -1,0 +1,2 @@
+sudo grep -E '^#?PermitRootLogin' /etc/ssh/sshd_config
+# Set it PermitRootLogin no
