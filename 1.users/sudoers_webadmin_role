@@ -1,0 +1,5 @@
+# Web administrators can manage web services and configurations
+%webadmins ALL=(root) NOPASSWD: /bin/systemctl * nginx, /bin/systemctl * apache2
+%webadmins ALL=(root) NOPASSWD: /usr/bin/nano /etc/nginx/*, /usr/bin/nano /var/www/*
+%webadmins ALL=(root) NOPASSWD: /usr/sbin/nginx -t
+%webadmins ALL=(root) PASSWD: /usr/bin/certbot
