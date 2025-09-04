@@ -1,0 +1,5 @@
+# Database administrators can manage database services
+%dbadmins ALL=(root) NOPASSWD: /bin/systemctl * mysql, /bin/systemctl * postgresql
+%dbadmins ALL=(postgres) NOPASSWD: /usr/bin/psql, /usr/bin/createdb, /usr/bin/dropdb
+%dbadmins ALL=(mysql) NOPASSWD: /usr/bin/mysql
+%dbadmins ALL=(root) PASSWD: /usr/bin/mysqldump *, /usr/bin/pg_dump *
