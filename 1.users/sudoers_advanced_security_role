@@ -1,0 +1,15 @@
+# Advanced security user with logging and restrictions
+Defaults:secureuser log_input, log_output
+Defaults:secureuser logfile=/var/log/sudo-secureuser.log
+Defaults:secureuser timestamp_timeout=5
+Defaults:secureuser passwd_tries=2
+Defaults:secureuser badpass_message="Access denied. Incident logged."
+
+# Secure user with command aliases
+Cmnd_Alias MONITORING = /usr/bin/htop, /usr/bin/iotop, /usr/bin/nethogs, /bin/ps
+Cmnd_Alias LOG_ANALYSIS = /usr/bin/tail, /usr/bin/head, /usr/bin/grep, /usr/bin/awk
+Cmnd_Alias SAFE_EDIT = /usr/bin/nano /var/log/*, /usr/bin/nano /tmp/*
+
+secureuser ALL=(root) NOPASSWD: MONITORING
+secureuser ALL=(root) PASSWD: LOG_ANALYSIS, SAFE_EDIT
+secureuser ALL=(root) !/usr/bin/passwd, !/usr/bin/su, !/bin/sh, !/bin/bash
