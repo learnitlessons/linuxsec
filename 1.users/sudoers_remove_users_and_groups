@@ -1,0 +1,27 @@
+# Remove test users
+sudo userdel -r serviceadmin 2>/dev/null
+sudo userdel -r webuser 2>/dev/null
+sudo userdel -r dbuser 2>/dev/null
+sudo userdel -r backupuser 2>/dev/null
+sudo userdel -r secureuser 2>/dev/null
+sudo userdel -r envuser 2>/dev/null
+sudo userdel -r quickuser 2>/dev/null
+sudo userdel -r longuser 2>/dev/null
+sudo userdel -r securesession 2>/dev/null
+sudo userdel -r audituser 2>/dev/null
+
+# Remove test groups
+sudo groupdel webadmins 2>/dev/null
+sudo groupdel dbadmins 2>/dev/null
+sudo groupdel backupadmins 2>/dev/null
+
+# Archive test sudoers files for reference
+sudo mkdir -p /etc/sudoers.d/archive
+sudo mv /etc/sudoers.d/service-management /etc/sudoers.d/archive/ 2>/dev/null
+sudo mv /etc/sudoers.d/web-admins /etc/sudoers.d/archive/ 2>/dev/null
+sudo mv /etc/sudoers.d/db-admins /etc/sudoers.d/archive/ 2>/dev/null
+sudo mv /etc/sudoers.d/backup-admins /etc/sudoers.d/archive/ 2>/dev/null
+sudo mv /etc/sudoers.d/advanced-security /etc/sudoers.d/archive/ 2>/dev/null
+sudo mv /etc/sudoers.d/env-security /etc/sudoers.d/archive/ 2>/dev/null
+sudo mv /etc/sudoers.d/session-management /etc/sudoers.d/archive/ 2>/dev/null
+sudo mv /etc/sudoers.d/audit-logging /etc/sudoers.d/archive/ 2>/dev/null
