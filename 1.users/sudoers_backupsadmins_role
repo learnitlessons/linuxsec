@@ -1,0 +1,5 @@
+# Backup administrators can run backup tools and access necessary files
+%backupadmins ALL=(root) NOPASSWD: /usr/bin/rsync, /bin/tar, /usr/bin/zip, /usr/bin/unzip
+%backupadmins ALL=(root) NOPASSWD: /bin/mount, /bin/umount
+%backupadmins ALL=(root) NOPASSWD: /usr/bin/find /home/* -type f, /usr/bin/find /var/* -type f
+Defaults:%backupadmins timestamp_timeout=60
