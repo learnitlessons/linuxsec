@@ -10,3 +10,10 @@ sudo usermod -aG backupadmins webuser
 echo "webuser:123" | sudo chpasswd
 echo "dbuser:123" | sudo chpasswd  
 echo "backupuser:123" | sudo chpasswd
+
+sudo adduser quickuser
+sudo adduser longuser  
+sudo adduser securesession
+echo "quickuser:123" | sudo chpasswd
+echo "longuser:123" | sudo chpasswd
+echo "securesession:123" | sudo chpasswd
