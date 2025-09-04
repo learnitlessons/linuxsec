@@ -1,12 +1,12 @@
-#Create groups for different administrative roles:
-bashsudo groupadd webadmins
+# Create groups for different administrative roles:
+sudo groupadd webadmins
 sudo groupadd dbadmins
 sudo groupadd backupadmins
-#Create users for each role:
-bashsudo adduser webuser --ingroup webadmins
-sudo adduser dbuser --ingroup dbadmins
-sudo adduser backupuser --ingroup backupadmins
-#Set simple passwords for testing:
-bashecho "webuser:web123" | sudo chpasswd
-echo "dbuser:db123" | sudo chpasswd  
-echo "backupuser:backup123" | sudo chpasswd
+# Create users for each role:
+sudo usermod -aG webadmins webuser
+sudo usermod -aG dbadmins webuser
+sudo usermod -aG backupadmins webuser 
+# Set simple passwords for testing:
+echo "webuser:123" | sudo chpasswd
+echo "dbuser:123" | sudo chpasswd  
+echo "backupuser:123" | sudo chpasswd
