@@ -1,0 +1,8 @@
+# Session management for different user types
+Defaults:quickuser timestamp_timeout=1
+Defaults:longuser timestamp_timeout=30
+Defaults:securesession timestamp_timeout=0
+
+quickuser ALL=(root) ALL
+longuser ALL=(root) ALL
+securesession ALL=(root) ALL
